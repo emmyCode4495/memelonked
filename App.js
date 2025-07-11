@@ -1,29 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Welcome from './src/Auth/Welcome';
 import WalletConnectScreen from './src/Auth/ProfileSetup/WalletConnectScreen';
-
+import ProfileDetailsSetup from './src/Auth/ProfileSetup/ProfileDetailsSetup';
+import HomePage from './src/MainScreens/HomePage';
+import { AuthContext, AuthProvider } from './src/persistence/AuthContext';
+import RootNavigator from './src/persistence/RootNavigator';
 
 const Stack = createNativeStackNavigator();
 
-
 const App = () => {
+
   return (
-    <NavigationContainer>
-     <Stack.Navigator 
-     screenOptions={{
-        headerShown:false
-     }}
-     >
-      <Stack.Screen name="welcome" component={Welcome} />
-       <Stack.Screen name="connect" component={WalletConnectScreen} />
-    </Stack.Navigator>
-    </NavigationContainer>
-  )
-}
+    <AuthProvider>
+      <NavigationContainer>
+           <RootNavigator />
+      </NavigationContainer>
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
