@@ -81,3 +81,5 @@ serviceAccountKey*.json
 src/backend/serviceAccountKey.json
 serviceAccountKey*.json
 **/serviceAccountKey*.json
+src/backend/serviceAccountKey.json
+serviceAccountKey*.json
