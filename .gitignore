@@ -76,3 +76,5 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+src/backend/serviceAccountKey.json
+serviceAccountKey*.json
